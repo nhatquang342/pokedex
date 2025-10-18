@@ -45,11 +45,11 @@ func (c *Cache) Get(key string) ([]byte, bool) {
 	/*if !ok {
 		return nil, false
 	}*/
-	if ok {
+	/*if ok {
         fmt.Println("CACHE HIT:", key)
     } else {
         fmt.Println("CACHE MISS:", key)
-    }
+    }*/
 	return entry.val, ok
 }
 

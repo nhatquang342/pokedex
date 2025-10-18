@@ -57,6 +57,13 @@ type config struct {
 	pokedex map[string]Pokemon
 }
 
+type Pokemon struct {
+		Name string `json:"name"`
+		baseExp int `json:"base_experience"`
+		Height int `json:"height"`
+		Weight int `json:"weight"`
+}
+
 func getCommands() map[string]cliCommand {
 	return map[string]cliCommand{
 		"help": {
@@ -88,6 +95,16 @@ func getCommands() map[string]cliCommand {
 			name:        "catch",
             description: "Catch a pokemon",
             callback:    commandCatch,
+		},
+		"inspect": {
+			name:        "inspect",
+            description: "Inspect a pokemon",
+            callback:    commandInspect,
+		},
+		"pokedex": {
+			name:        "pokedex",
+            description: "List all pokemons caught",
+            callback:    commandPokedex,
 		},
 	}
 }

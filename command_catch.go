@@ -9,11 +9,6 @@ import (
 	"time"
 )
 
-type Pokemon struct {
-		Name string `json:"name"`
-		baseExp int `json:"base_experience"`
-}
-
 func commandCatch(cfg *config, args []string) error {
 	if len(args) < 1 {
 		return fmt.Errorf("Usage: catch <pokemon-name>")
